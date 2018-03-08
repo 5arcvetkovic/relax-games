@@ -1,8 +1,8 @@
 // game settings
-var row_count = 4;
-var column_count = 6;
-var win_threshold = 2; // <= column_count
-var win_amount = [1,2,3,4,5,6,7,8,9,10,11,12];
+var row_count = 4; // number of rows
+var column_count = 6; // number of reels
+var win_threshold = 2; // number of symbols needed to win (<= column_count)
+var paytable = [1,2,3,4,5,6,7,8,9,10,11,12]; // number of credits each symbol (from /assets/reel1.png) wins
 
 // dimensions
 var scale = calculateScale(row_count+2, column_count);
@@ -208,7 +208,7 @@ function create () {
                         }
                     }
                     if (player_won) {
-                        winnings += win_amount[numbers[i][j]];
+                        winnings += paytable[numbers[i][j]];
                     }
                 }
             }
